@@ -1,4 +1,9 @@
 # CMake generation dependency list for this directory.
+E:/OpenCV/opencv/build/x64/vc15/lib/OpenCVConfig-version.cmake
+E:/OpenCV/opencv/build/x64/vc15/lib/OpenCVConfig.cmake
+E:/OpenCV/opencv/build/x64/vc15/lib/OpenCVModules-debug.cmake
+E:/OpenCV/opencv/build/x64/vc15/lib/OpenCVModules-release.cmake
+E:/OpenCV/opencv/build/x64/vc15/lib/OpenCVModules.cmake
 E:/Repos VS Code/ED22-01-Angel-Rivera/CMakeLists.txt
 E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/3.22.22040401-MSVC_2/CMakeCCompiler.cmake
 E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/3.22.22040401-MSVC_2/CMakeCXXCompiler.cmake
@@ -22,6 +27,8 @@ E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/c
 E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.22/Modules/Compiler/MSVC-C.cmake
 E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.22/Modules/Compiler/MSVC-CXX.cmake
 E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.22/Modules/DartConfiguration.tcl.in
+E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake
+E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.22/Modules/FindPackageMessage.cmake
 E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.22/Modules/Platform/Windows-MSVC-C.cmake
 E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.22/Modules/Platform/Windows-MSVC-CXX.cmake
 E:/Visual Studio 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.22/Modules/Platform/Windows-MSVC.cmake
