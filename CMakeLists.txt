@@ -9,7 +9,7 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 include_directories("src")
 
-add_executable(TallerConteoPersonas src/main.cpp src/logic/Persona.cpp)
+add_executable(TallerConteoPersonas src/main.cpp src/logic/Persona.cpp src/logic/Detector.cpp)
 
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
 

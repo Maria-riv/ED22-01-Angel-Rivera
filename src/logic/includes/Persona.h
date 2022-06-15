@@ -14,7 +14,7 @@ class Persona{
     int xCentro;
     int yCentro;
 public:
-    Persona(cv::Rect&);
+    Persona(Rect&);
 
     int getXComienzo();
     int getYComienzo();

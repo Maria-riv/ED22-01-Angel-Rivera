@@ -315,6 +315,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\main.cpp" />
     <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Persona.cpp" />
+    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Detector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\Repos VS Code\ED22-01-Angel-Rivera\build\ZERO_CHECK.vcxproj">

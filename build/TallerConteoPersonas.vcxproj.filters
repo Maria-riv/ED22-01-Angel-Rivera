@@ -7,6 +7,9 @@
     <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Persona.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Detector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="E:\Repos VS Code\ED22-01-Angel-Rivera\CMakeLists.txt" />
