@@ -2,7 +2,7 @@ E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/Experimental.dir
 E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/Nightly.dir
 E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/Continuous.dir
 E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/NightlyMemoryCheck.dir
-E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/ED22-01-Angel-Rivera.dir
+E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/TallerConteoPersonas.dir
 E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/PACKAGE.dir
 E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/RUN_TESTS.dir
 E:/Repos VS Code/ED22-01-Angel-Rivera/build/CMakeFiles/ALL_BUILD.dir

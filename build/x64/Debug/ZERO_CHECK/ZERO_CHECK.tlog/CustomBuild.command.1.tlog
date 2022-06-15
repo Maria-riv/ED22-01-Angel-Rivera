@@ -1,6 +1,6 @@
 ^E:\REPOS VS CODE\ED22-01-ANGEL-RIVERA\BUILD\CMAKEFILES\CAE07A996EF10FA5C8F424991E8782E9\GENERATE.STAMP.RULE
 setlocal
-"E:\Visual Studio 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SE:/Repos VS Code/ED22-01-Angel-Rivera" "-BE:/Repos VS Code/ED22-01-Angel-Rivera/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "E:/Repos VS Code/ED22-01-Angel-Rivera/build/ED22-01-Angel-Rivera.sln"
+"C:\Program Files\CMake\bin\cmake.exe" "-SE:/Repos VS Code/ED22-01-Angel-Rivera" "-BE:/Repos VS Code/ED22-01-Angel-Rivera/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "E:/Repos VS Code/ED22-01-Angel-Rivera/build/TallerConteoPersonas.sln"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
