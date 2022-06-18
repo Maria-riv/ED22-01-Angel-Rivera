@@ -9,6 +9,10 @@ Persona::Persona(cv::Rect &r){
     yCentro = r.y + ((float)r.height/2.0);;
 }
 
+Persona::Persona(){
+    
+}
+
 int Persona::getXComienzo(){
     return xComienzo;
 }

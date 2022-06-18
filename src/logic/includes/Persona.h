@@ -15,6 +15,7 @@ class Persona{
     int yCentro;
 public:
     Persona(Rect&);
+    Persona();
 
     int getXComienzo();
     int getYComienzo();
