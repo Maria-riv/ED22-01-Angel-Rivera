@@ -1,5 +1,5 @@
-#include "LinkedList.h"
-#include "Nodo.h"
+#include "includes/LinkedList.h"
+#include "includes/Nodo.h"
 
 #include "Nodo.cpp"
 

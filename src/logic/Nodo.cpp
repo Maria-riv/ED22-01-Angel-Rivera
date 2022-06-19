@@ -25,5 +25,8 @@ Persona Nodo::getPersona(){
 
 void Nodo::setContador(int cont){
     this->contador = cont;
-    
+}
+
+void Nodo::setId(int num){
+    this->id = num;
 }
