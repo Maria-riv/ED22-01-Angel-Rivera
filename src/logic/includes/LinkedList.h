@@ -1,5 +1,5 @@
-#ifndef LIST_H
-#define LIST_H
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
  
 #include <fstream>
 #include <iostream>
@@ -7,26 +7,23 @@
 #include <stdlib.h>
  
 #include "Nodo.h"
-#include "Nodo.cpp"
  
 using namespace std;
  
  
-class List
+class LinkedList
 {
     public:
-        List();
-        ~List();
- 
-        void add_head(T);
-        void add_end(T);
-        void del_by_position(int);
-        void print();
-        void search(T);
+        LinkedList();
+        ~LinkedList();
+
+        void agregar(Nodo*);
+        int size();
+        Nodo* buscar();
  
     private:
-        Nodo *m_head;
-        int m_num_nodes;
+        Nodo *head;
+        int num_nodes;
 };
  
 #endif 
