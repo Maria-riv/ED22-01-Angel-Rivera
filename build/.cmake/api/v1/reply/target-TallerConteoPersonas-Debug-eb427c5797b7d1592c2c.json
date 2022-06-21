@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "RelWithDebInfo/TallerConteoPersonas.exe"
+			"path" : "Debug/TallerConteoPersonas.exe"
 		},
 		{
-			"path" : "RelWithDebInfo/TallerConteoPersonas.pdb"
+			"path" : "Debug/TallerConteoPersonas.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -58,7 +58,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
 				}
 			],
 			"includes" : 
@@ -79,7 +79,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -95,7 +96,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
 				"role" : "flags"
 			},
 			{
@@ -104,82 +105,82 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455.lib",
+				"fragment" : "E:\\OpenCV\\opencv\\build\\x64\\vc15\\lib\\opencv_world455d.lib",
 				"role" : "libraries"
 			},
 			{
@@ -205,7 +206,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -220,19 +222,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/logic/LinkedList.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/logic/Persona.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/logic/Detector.cpp",
+			"path" : "src/logic/Nodo.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/logic/Nodo.cpp",
+			"path" : "src/logic/CentroidTracker.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

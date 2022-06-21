@@ -4,13 +4,16 @@
     <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\LinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Persona.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Detector.cpp">
+    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Nodo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Nodo.cpp">
+    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\CentroidTracker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

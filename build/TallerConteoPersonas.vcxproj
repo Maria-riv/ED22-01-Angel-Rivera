@@ -314,9 +314,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\main.cpp" />
+    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\LinkedList.cpp" />
     <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Persona.cpp" />
-    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Detector.cpp" />
     <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\Nodo.cpp" />
+    <ClCompile Include="E:\Repos VS Code\ED22-01-Angel-Rivera\src\logic\CentroidTracker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\Repos VS Code\ED22-01-Angel-Rivera\build\ZERO_CHECK.vcxproj">

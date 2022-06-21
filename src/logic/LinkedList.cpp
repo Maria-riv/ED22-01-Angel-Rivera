@@ -1,19 +1,16 @@
 #include "includes/LinkedList.h"
-#include "includes/Nodo.h"
-
-#include "Nodo.cpp"
 
 using namespace std;
  
 
-LinkedList::LinkedList()
+LinkedList<T>::LinkedList()
 {
     num_nodes = 0;
     head = NULL;
 }
 
 
-void LinkedList::add_head(T data)
+void LinkedList<T>::add_head(T data)
 {
     Nodo *new_node = new Nodo (data_);
     Nodo *temp = m_head;
@@ -33,20 +30,20 @@ void LinkedList::add_head(T data)
  
 
 
-void LinkedList::add_end(T data_)
+void LinkedList<T>::add_end(T data_)
 {
-    Nodp *new_node = new Nodo (data_);
-    Nodo *temp = m_head;
+    Nodo *new_node = new Nodo (data_);
+    Nodo *temp = head;
  
-    if (!m_head) {
-        m_head = new_node;
+    if (!head) {
+        head = new_node;
     } else {
         while (temp->next != NULL) {
             temp = temp->next;
         }
         temp->next = new_node;
     }
-    m_num_nodes++;
+    num_nodes++;
 }
 
 
@@ -137,4 +134,6 @@ void LinkedList::sort()
 }
  
 
-LinkedList::~LinkedList() {}
+LinkedList::~LinkedList(){
+
+}
