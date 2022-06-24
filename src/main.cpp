@@ -1,12 +1,10 @@
 #include <iostream>
 #include "logic/includes/CentroidTracker.h"
-#include "logic/includes/LinkedList.h"
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 
 using namespace cv;
-using namespace cv::dnn;
 using namespace std;
 
 string CLASSES[] = {"background", "aeroplane", "bicycle", "bird", "boat",
@@ -14,75 +12,82 @@ string CLASSES[] = {"background", "aeroplane", "bicycle", "bird", "boat",
 	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
 	"sofa", "train", "tvmonitor"};
 
-int main(int, char**) {
-    auto ct = new CentroidTracker(50);
-    vector<vector<int>> trackers;
-    LinkedList trackable_people();    
+int main() {
+    std::cout << "Hello, Tracker!" << std::endl;
+    auto centroidTracker = new CentroidTracker(20);
 
     VideoCapture cap(0);
-    if(!cap.isOpened()){
-        cout << "No se puede abrir la camara";
+//    VideoCapture cap("../../test2.mp4");
+    if (!cap.isOpened()) {
+        cout << "Cannot open camera";
     }
-    
-    String modelBin = "E:/Repos VS Code/ED22-01-Angel-Rivera/src/MobileNetSSD_deploy.caffemodel";
-    String modelTxt = "E:/Repos VS Code/ED22-01-Angel-Rivera/src/MobileNetSSD_deploy.prototxt";
+
+    String modelTxt = "E:/Repos VS Code/Centroid-Object-Tracking/model/deploy.prototxt";
+    String modelBin = "E:/Repos VS Code/Centroid-Object-Tracking/model/res10_300x300_ssd_iter_140000.caffemodel";
+
+    cout << "Loading model.." << endl;
     auto net = dnn::readNetFromCaffe(modelTxt, modelBin);
-    
-    int totalEntrada = 0;
-    int totalSalida = 0;
-    int totalFrames = 0;
-    int skip_frames = 0;
 
-    while(cap.isOpened()){
-        Mat frame;
-        cap.read(frame);
+    cout << "Starting video stream" << endl;
+    while (cap.isOpened()) {
+        Mat cameraFrame;
+        cap.read(cameraFrame);
 
-        if(frame.empty()){
-            break;
-        }
+        resize(cameraFrame, cameraFrame, Size(400, 300));
+        auto inputBlob = dnn::blobFromImage(cameraFrame, 1.0, Size(400, 300), Scalar(104.0, 177.0, 123.0));
 
-        resize(frame, frame, Size(400, 300));
-        
+        net.setInput(inputBlob);
+        auto detection = net.forward("detection_out");
+        Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
 
-        if(totalFrames % skip_frames == 0){
-            auto inputBlolb = blobFromImage(frame, 1.0, Size(400,300), Scalar(104.0, 177.0, 123.0));
-            net.setInput(inputBlolb);
-            auto detection = net.forward("detection_out");
-            Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
+        vector<vector<int>> boxes;
 
-            float confidenceThreshold = 0.2;
-            for (int i = 0; i < detectionMat.rows; i++) {
-                float confidence = detectionMat.at<float>(i, 2);
+        float confidenceThreshold = 0.2;
+        for (int i = 0; i < detectionMat.rows; i++) {
+            float confidence = detectionMat.at<float>(i, 2);
 
-                if (confidence > confidenceThreshold) {
-                    int xLeftTop = static_cast<int>(detectionMat.at<float>(i, 3) * frame.cols);
-                    int yLeftTop = static_cast<int>(detectionMat.at<float>(i, 4) * frame.rows);
-                    int xRightBottom = static_cast<int>(detectionMat.at<float>(i, 5) * frame.cols);
-                    int yRightBottom = static_cast<int>(detectionMat.at<float>(i, 6) * frame.rows);
+            if (confidence > confidenceThreshold) {
+                int xLeftTop = static_cast<int>(detectionMat.at<float>(i, 3) * cameraFrame.cols);
+                int yLeftTop = static_cast<int>(detectionMat.at<float>(i, 4) * cameraFrame.rows);
+                int xRightBottom = static_cast<int>(detectionMat.at<float>(i, 5) * cameraFrame.cols);
+                int yRightBottom = static_cast<int>(detectionMat.at<float>(i, 6) * cameraFrame.rows);
 
-                    Rect object((int) xLeftTop, (int) yLeftTop, (int) (xRightBottom - xLeftTop),
-                                (int) (yRightBottom - yLeftTop));
-                    rectangle(frame, object, Scalar(0, 255, 0), 2);
+                Rect object((int) xLeftTop, (int) yLeftTop, (int) (xRightBottom - xLeftTop),
+                            (int) (yRightBottom - yLeftTop));
+                rectangle(cameraFrame, object, Scalar(0, 255, 0), 2);
 
-                    trackers.insert(trackers.end(), {xLeftTop, yLeftTop, xRightBottom, yRightBottom});
-                }
+                boxes.insert(boxes.end(), {xLeftTop, yLeftTop, xRightBottom, yRightBottom});
             }
         }
-        else{
 
+        auto objects = centroidTracker->update(boxes);
+
+        if (!objects.empty()) {
+            for (auto obj: objects) {
+                circle(cameraFrame, Point(obj.second.first, obj.second.second), 4, Scalar(255, 0, 0), -1);
+                string ID = std::to_string(obj.first);
+                cv::putText(cameraFrame, ID, Point(obj.second.first - 10, obj.second.second - 10),
+                            FONT_HERSHEY_COMPLEX, 0.5, Scalar(0, 255, 0), 2);
+            }
+
+            //drawing the path
+            // for (auto obj: objects) {
+            //     int k = 1;
+            //     for (int i = 1; i < centroidTracker->path_keeper[obj.first].size(); i++) {
+            //         int thickness = int(sqrt(20 / float(k + 1) * 2.5));
+            //         cv::line(cameraFrame,
+            //                  Point(centroidTracker->path_keeper[obj.first][i - 1].first, centroidTracker->path_keeper[obj.first][i - 1].second),
+            //                  Point(centroidTracker->path_keeper[obj.first][i].first, centroidTracker->path_keeper[obj.first][i].second),
+            //                  Scalar(0, 0, 255), thickness);
+            //         k += 1;
+            //     }
+            // }
         }
-        
-        imshow("Frame", frame);
-        //Presionar ESC para terminar antes el trackeo
-        char c = (char) waitKey(25);
-        if(c == 27){
+        imshow("Detection", cameraFrame);
+        char c = (char) waitKey(1);
+        if (c == 27)
             break;
-        }
-
-        totalFrames++;
     }
-    cap.release();
-    destroyAllWindows();
-
+    delete centroidTracker;
     return 0;
 }
