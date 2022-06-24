@@ -15,10 +15,7 @@
 
 ### Resumen
 
-<Este informe tiene como objetivo explicar de forma detallada y ejemplificada la manera en la que se desarrolló el programa 
- para el conteo de personas que forma parte del sistema de vigilancia de la empresa ACME junto con la instalación del IDE 
- y la configuración de las librerías que se utilizaron para desarrollar el código.>
-
+ En el siguiente informe se tiene como objetivo explicar y detallar el proceso del desarrollo del proyecto mediante ejemplos, etc. El problema se basa en el conteo de personas para apoyar el sistema de vigilancia de la empresa ACME junto con la instalacion del IDE y la configuración de las librerías para el desarrollo del proyecto y cumplir con las necesidades de la empresas.
 
 ### Documentos
 
