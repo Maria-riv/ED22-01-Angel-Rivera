@@ -46,15 +46,21 @@ Implementar un sistema con diversos algoritmos que contribuyan a la solucion del
 
 ## 2. Materiales y métodos
 
-Implementacion de los algoritmos mediante clases que permiten identificar una persona a través de los metodos incorporados en OpenCV, utilizando estructuras de datos como listas enlazadas, 
+Implementacion de los algoritmos mediante clases que permiten identificar una persona a través de los metodos incorporados en OpenCV, utilizando estructuras de datos como listas enlazadas que permiten almacenar a las entidades que corresponden a las personas y de esta forma llevar el conteo de las personas que entran y salen.
+A través del método centroidTrack el cual permite seguir el rastro de la entidad encontrada, un metodo que nos sirve para diferenciar a la personas que transitan en el edificio.
 
 ### 2.1 Instalación
 
-Describir brevemente las librerías utilizadas para la instalación y programas utilizados para la ejecución del código. (Agregar una sección de anexo para describir como fueron instaladas las librerías de OpenCV y la IDE utilzada para el trabajo)
+La librería utilizadas para la construcción del proyecto es la de OpeCV en donde su instalación se realizó por medio de la IDE Visual Studio Code, en donde por medio de distintas configuraciones, se logra la exitosa instalación.
 
 ### 2.2 Diseño 
 
-Explicar los componentes (módulos o clases) utilizados para resolver el problema. Indicar arquitectura propuesta, diagrama de clases u otro artefacto que estime conveniente para explicar el diseño de su implimentación.
+Las clases implementadas permiten el cumplimiento de los objetivos propuestos, principalmente para la detección y conteo de las personas.
+* La clase **Persona** almacena los datos de las entidades detectadas en las secuencias de video.
+*  La clase **Nodo** permite almacenar el objeto Persona, en donde  el conjunto de estos nodos se almacenarán en otra clase llamada **LinkedList**.
+*  La clase **LinkedList** permite guardar los datos de las entidades las cuales se almacenan en los nodos, esta lista nos permite llevar el conteo de las personas que entran y salen del edificio.
+*  La clase **CentroidTracker** permite rastear las entidades detectadas, permitiendo identificar si la persona entra o sale.
+* La clase **main** se encuentra implemenada con algoritmos que permiten la detección de las personas y la ejecucción del programa.
 
 ### 2.3 Implementación
 
@@ -83,9 +89,11 @@ El detector de caras utilizado fue xxx. Para utilizarlo se debe.... El código p
 La primera linea carga el archivo de entrenamiento... etc
 
 ## 3. Resultados obtenidos
-
+Los resultados obtenidos en la implementación del codigo es la exitosa detección de personas y que el programa sea capaz de diferenciar cada entidad de modo de identificar una entrada y salida. También el el conteo de las personas o entidades que entran o salen.
 ## 4. Conclusiones
-
+Se logró pese a las dificultades la exitosa detección de personas y determinar las personas que entran y salen, también el conteo necesario de estas con respecto a la entrada y salida. Se cumplió con el almacenamiento de la información y diferenciar entre entidades.
+Faltó implementar un algoritmo para determinar la velocidad del flujo de personas debido a retrasos existentes por fallas en la instalación de la librería, errores en la implementación del algoritmo de detección de personas, etc. 
+Este objetivo será cumplido para la segunda parte del proyecto la cual será el programa ya completo.
 # Anexos
 
 ## Anexo A: Instalación librerías OpenCV
