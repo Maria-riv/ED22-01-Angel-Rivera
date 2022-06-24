@@ -17,9 +17,9 @@ class LinkedList
         LinkedList();
         ~LinkedList();
 
-        void agregar(Nodo*);
+        void agregar(Persona);
         int size();
-        Nodo* buscar();
+        Nodo* buscar(int);
  
     private:
         Nodo *head;

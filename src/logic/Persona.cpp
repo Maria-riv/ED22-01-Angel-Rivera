@@ -1,38 +1,35 @@
 #include "includes/Persona.h"
 
-Persona::Persona(cv::Rect &r){
-    xComienzo = r.x;
-    yComienzo = r.y;
-    xFin = r.x + r.width;
-    yFin = r.y + r.height;
-    xCentro = r.x + ((float)r.width/2.0);
-    yCentro = r.y + ((float)r.height/2.0);;
+Persona::Persona(int xC, int yC, int idObj){
+    this->centroids.push_back({xC,yC});
+    this->counted = false;
+    this->id = idObj;
 }
 
 Persona::Persona(){
     
 }
 
-int Persona::getXComienzo(){
-    return xComienzo;
+void Persona::setCounted(bool c){
+    counted = c;
 }
 
-int Persona::getYComienzo(){
-    return yComienzo;
+bool Persona::getCounted(){
+    return counted;
 }
 
-int Persona::getXFin(){
-    return xFin;
+int Persona::getId(){
+    return this->id;
 }
 
-int Persona::getYFin(){
-    return yFin;
+void Persona::setId(int newId){
+    this->id = newId;
 }
 
-int Persona::getXCentro(){
-    return xCentro;
+vector<pair<int,int>> Persona::getCentroids(){
+    return this->centroids;
 }
 
-int Persona::getYCentro(){
-    return yCentro;
+void Persona::setCentroids(vector<pair<int,int>> actCentroids){
+    this->centroids = actCentroids;
 }

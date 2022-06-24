@@ -1,139 +1,40 @@
 #include "includes/LinkedList.h"
 
 using namespace std;
- 
 
-LinkedList<T>::LinkedList()
-{
-    num_nodes = 0;
-    head = NULL;
+LinkedList::LinkedList(){
+    this->head = nullptr;
+    this->num_nodes = 0;
 }
 
-
-void LinkedList<T>::add_head(T data)
-{
-    Nodo *new_node = new Nodo (data_);
-    Nodo *temp = m_head;
- 
-    if (!m_head) {
-        m_head = new_node;
-    } else {
-        new_node->next = m_head;
-        m_head = new_node;
- 
-        while (temp) {
-            temp = temp->next;
-        }
+void LinkedList::agregar(Persona p){
+    Nodo* n = new Nodo(p);
+    if(this->head == nullptr){
+        this->head = n;
+        this->num_nodes++;
     }
-    m_num_nodes++;
-}
- 
-
-
-void LinkedList<T>::add_end(T data_)
-{
-    Nodo *new_node = new Nodo (data_);
-    Nodo *temp = head;
- 
-    if (!head) {
-        head = new_node;
-    } else {
-        while (temp->next != NULL) {
-            temp = temp->next;
-        }
-        temp->next = new_node;
-    }
-    num_nodes++;
-}
-
-
-// Eliminar por posición del nodo
-template<typename T>
-void Linkedlist::del_by_position(int pos)
-{
-    Nodo *temp = m_head;
-    Nodo *temp1 = temp->next;
- 
-    if (pos < 1 || pos > m_num_nodes) {
-        cout << "Fuera de rango " << endl;
-    } else if (pos == 1) {
-        m_head = temp->next;
-    } else {
-        for (int i = 2; i <= pos; i++) {
-            if (i == pos) {
-                Node<T> *aux_node = temp1;
-                temp->next = temp1->next;
-                delete aux_node;
-                m_num_nodes--;
-            }
-            temp = temp->next;
-            temp1 = temp1->next;
-        }
+    else{
+        Nodo* aux = this->head;
+        n->setNext(aux);
+        this->head = n;
     }
 }
-void LinkedList::print()
-{
-    Nodo *temp = m_head;
-    if (!m_head) {
-        cout << "La Lista está vacía " << endl;
-    } else {
-        while (temp) {
-            temp->print();
-            if (!temp->next) cout << "NULL";
-                temp = temp->next;
-        }
-  }
-  cout << endl << endl;
-}
- 
-// Buscar el dato de un nodo
-void Linkedlist::search(T data_)
-{
-    Nodo *temp = m_head;
-    int cont = 1;
-    int cont2 = 0;
- 
-    while (temp) {
-        if (temp->data == data_) {
-            cout << "El dato se encuentra en la posición: " << cont << endl;
-            cont2++;
-        }
-        temp = temp->next;
-        cont++;
-    }
- 
-    if (cont2 == 0) {
-        cout << "No existe el dato " << endl;
-    }
-    cout << endl << endl;
-}
- 
-// Ordenar de manera ascendente
 
-void LinkedList::sort()
-{
-    Nodo temp;
-    Nodo *aux_node = m_head;
-    Nodo *temp = aux_node;
- 
-    while (aux_node) {
-        temp = aux_node;
- 
-        while (temp->next) {
-            temp = temp->next;
- 
-            if (aux_node->data > temp->data) {
-                temp_data = aux_node->data;
-                aux_node->data = temp->data;
-                temp->data = temp_data;
-            }
-        }
- 
-        aux_node = aux_node->next;
-    }
+int LinkedList::size(){
+    return this->num_nodes;
 }
- 
+
+Nodo* LinkedList::buscar(int id){
+    Nodo* aux = this->head;
+    while(aux->getNext() != NULL){
+        if(aux->getPersona().getId() == id){
+            break;
+        }
+        aux = aux->getNext();
+    }
+    return aux;
+}
 
 LinkedList::~LinkedList(){
-
+    
 }

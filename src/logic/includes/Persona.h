@@ -3,26 +3,27 @@
 
 #include <opencv2/opencv.hpp>
 
+using namespace std;
 using namespace cv;
 
 class Persona{
     private:
-    int xComienzo;
-    int yComienzo;
-    int xFin;
-    int yFin;
-    int xCentro;
-    int yCentro;
+
+    vector<pair<int,int>> centroids;
+    int id;
+    bool counted;
+    
+
 public:
-    Persona(Rect&);
+    Persona(int,int,int);
     Persona();
 
-    int getXComienzo();
-    int getYComienzo();
-    int getXFin();
-    int getYFin();
-    int getXCentro();
-    int getYCentro();
+    vector<pair<int,int>> getCentroids();
+    void setCentroids(vector<pair<int,int>>);
+    void setCounted(bool);
+    bool getCounted();
+    int getId();
+    void setId(int);
 };
 
 #endif
