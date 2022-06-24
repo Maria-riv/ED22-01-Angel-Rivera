@@ -46,7 +46,7 @@ Implementar un sistema con diversos algoritmos que contribuyan a la solucion del
 
 ## 2. Materiales y métodos
 
-Explicar brevemente como se espera desarrollar el trabajo de implementación.
+Implementacion de los algoritmos mediante clases que permiten identificar una persona a través de los metodos incorporados en OpenCV, utilizando estructuras de datos como listas enlazadas, 
 
 ### 2.1 Instalación
 
@@ -93,8 +93,7 @@ La primera linea carga el archivo de entrenamiento... etc
 ## Anexo B: Instalación de IDE y configuración librerías OpenCV
 
 # Referecia
-
-Indicar los libros, páginas web, documentos, etc. Utilizados en el trabajo. Por ejemplo:
-
-1. MONTERO, J.,Metodos matemáticos aplicados a la ganadería.3aed. Sevilla: Ediciones de la pradera,2007.
-2. LVARADO,   J.   P.,¿Qué   debe   contener   un   artículo   científico?.http://www.ie.tec.ac.cr/palvarado/pmwiki/index.php/MSc/Art\%c3\%adculoCient\%c3\%adfico. Fe-cha de acceso:13/Nov/2018
+1. IDE Visual Studio Code (https://code.visualstudio.com/).
+2. Librerías para procesamiento de imágenes en C++, OpenCV (https://opencv.org/).
+3. Tutoriales OpenCV y C++ (https://docs.opencv.org/master/d9/df8/tutorial root.html).
+4. YouTube OpenCV y C++ (https://youtu.be/2FYm3GOonhk).
