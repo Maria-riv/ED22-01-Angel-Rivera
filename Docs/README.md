@@ -63,36 +63,18 @@ Las clases implementadas permiten el cumplimiento de los objetivos propuestos, p
 
 ### 2.3 Implementación
 
-Explicar brevemente algunos aspectos de implementación: Por ejemplo, detector de caras utilizado. Se pueden realizar pequeñas reseñas al código para indicar elementos importantes en el trabajo.
+#### Centroid Tracker
+Esta clase fue creada en base al algoritmo de seguimiento de entidades a través del trackeo en base a sus centroides, o el punto medio de la "imagen" detectada.
 
-Por ejemplo, 
+Este algoritmo se basa en ir comparando frame por frame los centroides de las entidades detectadas, verificando cual centroide en el siguiente frame corresponde a cada una de las entidades detectadas en el frame anterior, como tambien verificar si aparecieron nuevas entidades que deben ser trackeadas.
 
-#### Detector de caras
-
-El detector de caras utilizado fue xxx. Para utilizarlo se debe.... El código para detectar una cara en una imagen se muestra a continuación:
-
-```c++
- 1. faceCascadePath = "./haarcascade_frontalface_default.xml";
- 2. faceCascade.load( faceCascadePath )
- 3. std::vector<Rect> faces;
- 4. faceCascade.detectMultiScale(frameGray, faces);
-
- 5. for ( size_t i = 0; i < faces.size(); i++ )
- 6. {
- 7.  int x1 = faces[i].x;
- 8.  int y1 = faces[i].y;
- 9.  int x2 = faces[i].x + faces[i].width;
-10.  int y2 = faces[i].y + faces[i].height;
-11. }
-```
-La primera linea carga el archivo de entrenamiento... etc
+Debido a la extension de la clase y de que todos los metodos de la misma son importantes para su correcta ejecucion se sugiere revisar su funcionamiento directamente desde los archivos del repositorio.
 
 ## 3. Resultados obtenidos
-Los resultados obtenidos en la implementación del codigo es la exitosa detección de personas y que el programa sea capaz de diferenciar cada entidad de modo de identificar una entrada y salida. También el el conteo de las personas o entidades que entran o salen.
+Los resultados que se obtuvieron luego de la implementacion de los metodos planteados fue la correcta detección y trackeo de entidades por medio de un registro de video (en este caso por medio de la webcam), mostrando tanto su id como su centroide en pantalla.
 ## 4. Conclusiones
-Se logró pese a las dificultades la exitosa detección de personas y determinar las personas que entran y salen, también el conteo necesario de estas con respecto a la entrada y salida. Se cumplió con el almacenamiento de la información y diferenciar entre entidades.
-Faltó implementar un algoritmo para determinar la velocidad del flujo de personas debido a retrasos existentes por fallas en la instalación de la librería, errores en la implementación del algoritmo de detección de personas, etc. 
-Este objetivo será cumplido para la segunda parte del proyecto la cual será el programa ya completo.
+Debido a diversos contratiempos sufridos durante la implementación de los algoritmos planteados y de la estructura que ibamos a seguir para el programa solo se logró la implementación exitosa de la parte de la identificacion y del trackeo de entidades (personas), ya que por diversos errores que ocurrian con lo siguiente a implementar se optó por dejar solo la parte funcional de lo conseguido para esta entrega del taller.
+Los demas objetivos correspondientes a esta entrega, como tambien los requeridos para la siguiente entrega, serán cumplidos en esta misma.
 # Anexos
 
 ## Anexo A: Instalación librerías OpenCV
