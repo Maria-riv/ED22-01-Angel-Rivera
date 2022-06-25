@@ -12,8 +12,7 @@
 
 ## Resumen 
 
-Descripcion de los procesos de implementacion de un programa que realiza la detección de las personas que ingresan a un edificio, además de detectarlas, realiza un conteo de aquellos que entraron y salieron, también de la velocidad del flujo de personas.
-Explicación del proceso de instalación e implementacion de librerías, Cmake, OpenCV, que sirven de apoyo para la implementación los algoritmos necesarios para el funcionamiento del programa. 
+Describir los procesos de la implementación de un programa que detecta la entrada y salida de un grupo de personas que transitan en una zona determinada de un edificio, en ayuda a la solución de un problema solicitada por una empresa en su sistema de vigilancia. Al detectar las personas es necesario llevar un conteo de las entidades previamente detectadas y almacenadas, en conjunto a esto, la velocidad del flujo de personas que transita en cierto tiempo en el edificio. Se incluye una explicación de los elementos que ayudan en la implementación de los algoritmos a utilizar para la construcción del programa, esto en base de las librerías de OpenCV, también el detalle de la instalación de la IDE de Visual Studio Code y Cmake. Además, se incluye una descripción general del proceso funcional del programa solicitado por la empresa y de los objetivos que se han logrado para la realización exitosa de este.
 
 ## 1. Introducción
 
