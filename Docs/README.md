@@ -96,9 +96,37 @@ Este objetivo será cumplido para la segunda parte del proyecto la cual será el
 # Anexos
 
 ## Anexo A: Instalación librerías OpenCV
+* Primero se ingresa a la pagina web [OpenCV](https://opencv.org/)
+
+![6277b466da176dc95197a5658e6ecedf](https://user-images.githubusercontent.com/82680192/175753130-dd98e37a-f043-44f0-a41c-e8704b3835a1.png)
+
+* Se descarga y se ejecuta al finalizar la descarga
+
+![8518f05d7d0ee7139900daa81d5faee0](https://user-images.githubusercontent.com/82680192/175753146-a0a8ebd8-4338-434c-94e6-dabeaa9de06d.png)
+
+* Se debe editar las variables de entorno 
+
+![139edc4fb5103a13415f997e1ea69966](https://user-images.githubusercontent.com/82680192/175753151-7769bfd2-6ff2-436c-9798-0a5ab8825689.png)
 
 ## Anexo B: Instalación de IDE y configuración librerías OpenCV
+* Se descarga VS [Code](https://code.visualstudio.com/)
 
+![4d9da5dd01d3e375c1a9e06fabf8cff0](https://user-images.githubusercontent.com/82680192/175753158-60c0a0c9-acab-457d-a820-0b31c27fb0fe.png)
+
+* Se ejecuta e instala
+* Anexo a esto se debe debe descargar [CMake](https://cmake.org/download/)
+
+![831314f667d110a894f0f0c39683f2b6](https://user-images.githubusercontent.com/82680192/175753179-837c250c-c12a-46ab-9247-e5f06a9b25e4.png)
+
+* Completar el proceso de instalado y luego configurarlo en VS Code
+
+![f47dd100a7021c2b316da46e5b56c1d4](https://user-images.githubusercontent.com/82680192/175753195-c9f57f52-0d05-454f-80dc-d82e5e93c6e0.png)
+
+* Se debe instalar primero la Extension Pack de C/C++
+* Seguido de esto se debe configurar el Cmake y finalizamos con la instalación.
+
+![06316dc86dd5679097d20d0375c2fa81](https://user-images.githubusercontent.com/82680192/175753200-f4efe65a-96ef-4f7a-acfe-fcd9a4145809.png)
+![017c138525a0176b0f5c2b10ead0fc4b](https://user-images.githubusercontent.com/82680192/175753204-07f784c3-69e6-452b-8f4a-2540c82a4856.png)
 # Referecia
 1. IDE Visual Studio Code (https://code.visualstudio.com/).
 2. Librerías para procesamiento de imágenes en C++, OpenCV (https://opencv.org/).
