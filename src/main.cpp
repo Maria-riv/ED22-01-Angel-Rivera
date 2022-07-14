@@ -151,13 +151,27 @@ void watchVideo2(){
     }
     delete centroidTracker;
 }
-
-int main() {
+bool validacion(string x){
+    if(x == "SI"){
+        return true;
+    }else 
+    if(x == "si"){
+        return true;
+    }else
+    if(x == "Si"){
+        return true;
+    }else
+    if(x == "sI"){
+        return true;
+    }
+    return false;
+}
+void iniciarSesion(){
     string opcion3;
     int countType;
     cout << "Bienvenido al sistema de vigilancia de ACME\n" << "\nDesea inicar sesion?\n" << endl;
     cin >> opcion3;
-    while (opcion3 == "SI" || opcion3 == "si" || opcion3 == "Si" || opcion3 == "sI") {
+    while (validacion(opcion3)) {
         int opcion;
         cout << "Como desea iniciar sesion?\n" << "\n(1) Iniciar como ADMINISTRADOR\n" << "(2) Iniciar como GUARDIA" << "\n(3) Cerrar Sesion\n" << endl;
         cin >> opcion;
@@ -178,10 +192,10 @@ int main() {
                 }
                 break;
             case 2:
-                cout << "Bienvenido al menu GUARDIA" << endl << "¿Desea empezar con el conteo de personas?\n";
+                cout << "Bienvenido al menu GUARDIA" << endl << "¿Desea empezar con el conteo de personas? [si][no]\n";
                 string opcion4;
                 cin >> opcion4;
-                if(opcion4 == "Si" || opcion4 == "SI" || opcion4 == "si"){
+                if(validacion(opcion4)){
                     if(countType == 1){
                         watchVideo1();
                     }
@@ -194,6 +208,13 @@ int main() {
         cout << "¿Desea realizar otra accion?" << endl;
         cin >> opcion3;
     }
+    if(!validacion(opcion3)){
+        cout << "REINTENTE. . . ";
+        iniciarSesion();
+    }
     cout << "Cerrando sesion...";
+}
+int main() {
+    iniciarSesion();
     return 0;
 }
