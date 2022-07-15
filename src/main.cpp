@@ -221,6 +221,15 @@ bool validacion(string x){
     }
     return false;
 }
+void desplegarMenuGuardia(){
+    cout << "** MENU GUARDIA **" << endl;
+    cout << "DETECTAR PERSONAS" << endl;
+    cout << "CONTEO DE ENTRADA DE PERSONAS" << endl;
+    cout << "CONTEO DE SALIDA DE PERSONAS" << endl;
+    cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE ENTRAN" << endl;
+    cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE SALEN" << endl;
+}
+
 void iniciarSesion(){
     string opcion3;
     int countType;
@@ -241,16 +250,20 @@ void iniciarSesion(){
                 }
                 if(eleccion == 1){
                     countType = 1;
+                    watchVideo1();
                 }
                 else{
                     countType = 2;
+                    watchVideo2();
                 }
                 break;
             case 2:
+                //desplegarMenuGuardia();
                 cout << "Bienvenido al menu GUARDIA" << endl << "¿Desea empezar con el conteo de personas? [si][no]\n";
                 string opcion4;
-                cin >> opcion4;
+                cin >> opcion4;               
                 if(validacion(opcion4)){
+                    cout << "DESPLGANDO ESTADISTICAS..."<< endl;
                     if(countType == 1){
                         watchVideo1();
                     }
