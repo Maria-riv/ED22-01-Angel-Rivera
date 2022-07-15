@@ -243,6 +243,9 @@ CTEST_SUBMIT_RETRY_DELAY:STRING=5
 //Maximum time allowed before CTest will kill the test.
 DART_TESTING_TIMEOUT:STRING=1500
 
+//The directory containing a CMake configuration file for DLIB.
+DLIB_DIR:PATH=DLIB_DIR-NOTFOUND
+
 //Path to a program.
 GITCOMMAND:FILEPATH=C:/Program Files/Git/cmd/git.exe
 
@@ -269,6 +272,9 @@ TallerConteoPersonas_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 TallerConteoPersonas_SOURCE_DIR:STATIC=E:/Repos VS Code/ED22-01-Angel-Rivera
+
+//The directory containing a CMake configuration file for dlib.
+dlib_DIR:PATH=dlib_DIR-NOTFOUND
 
 
 ########################

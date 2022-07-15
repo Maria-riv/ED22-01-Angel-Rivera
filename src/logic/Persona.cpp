@@ -1,13 +1,14 @@
 #include "includes/Persona.h"
 
 Persona::Persona(int xC, int yC, int idObj){
-    this->centroids.push_back({xC,yC});
+    this->centroids.push_back(make_pair(xC,yC));
     this->counted = false;
     this->id = idObj;
 }
 
 Persona::Persona(){
-    
+    this->counted = false;
+    this->id = -1;
 }
 
 void Persona::setCounted(bool c){
@@ -30,6 +31,14 @@ vector<pair<int,int>> Persona::getCentroids(){
     return this->centroids;
 }
 
-void Persona::setCentroids(vector<pair<int,int>> actCentroids){
-    this->centroids = actCentroids;
+void Persona::addCentroids(pair<int,int> actCentroids){
+    centroids.push_back(actCentroids);
+}
+
+int Persona::promedioYC(){
+    int prom = 0;
+    for(auto c: centroids){
+        prom += c.second;
+    }
+    return prom/centroids.size();
 }

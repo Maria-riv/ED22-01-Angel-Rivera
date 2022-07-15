@@ -19,11 +19,12 @@ public:
     Persona();
 
     vector<pair<int,int>> getCentroids();
-    void setCentroids(vector<pair<int,int>>);
+    void addCentroids(pair<int,int>);
     void setCounted(bool);
     bool getCounted();
     int getId();
     void setId(int);
+    int promedioYC();
 };
 
 #endif
