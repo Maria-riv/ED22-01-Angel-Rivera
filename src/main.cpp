@@ -14,8 +14,9 @@ string CLASSES[] = {"background", "aeroplane", "bicycle", "bird", "boat",
 	"bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
 	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
 	"sofa", "train", "tvmonitor"};
-
-void watchVideo1(){
+//añadir un vector
+int* watchVideo1(){
+    int vectorContador[2];
     auto centroidTracker = new CentroidTracker(20);
     LinkedList trackableObjects = LinkedList();
     VideoCapture cap("Docs/example_01.mp4");
@@ -107,11 +108,15 @@ void watchVideo1(){
         if (c == 27)
             break;
     }
+    vectorContador[0] = totalUp;
+    vectorContador[1] = totalDown;
     delete centroidTracker;
     destroyAllWindows();
+    return vectorContador;
 }
 
-void watchVideo2(){
+int* watchVideo2(){
+    int vectorContador[2];
     auto centroidTracker = new CentroidTracker(20);
     LinkedList trackableObjects = LinkedList();
     VideoCapture cap(0);
@@ -203,8 +208,11 @@ void watchVideo2(){
         if (c == 27)
             break;
     }
+    vectorContador[0] = totalUp;
+    vectorContador[1] = totalDown;
     delete centroidTracker;
     destroyAllWindows();
+    return vectorContador;
 }
 bool validacion(string x){
     if(x == "SI"){
@@ -221,11 +229,22 @@ bool validacion(string x){
     }
     return false;
 }
-void desplegarMenuGuardia(){
+void desplegarMenuGuardia(int op){
+    int* vec;
     cout << "** MENU GUARDIA **" << endl;
     cout << "DETECTAR PERSONAS" << endl;
-    cout << "CONTEO DE ENTRADA DE PERSONAS" << endl;
-    cout << "CONTEO DE SALIDA DE PERSONAS" << endl;
+    if(op == 1){
+        vec = watchVideo1();
+    }else
+    {
+       vec = watchVideo2();
+    }
+    cout << "--CONTEO DE ENTRADA DE PERSONAS--" << endl;
+    cout << "PERSONAS QUE ENTRAN: ";
+    cout << vec[0] << endl;
+    cout << "--CONTEO DE SALIDA DE PERSONAS--" << endl;
+    cout << "PERSONAS QUE SALEN: ";
+    cout << vec[1] << endl;
     cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE ENTRAN" << endl;
     cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE SALEN" << endl;
 }
@@ -251,10 +270,12 @@ void iniciarSesion(){
                 if(eleccion == 1){
                     countType = 1;
                     watchVideo1();
+                    desplegarMenuGuardia(countType);
                 }
                 else{
                     countType = 2;
                     watchVideo2();
+                    desplegarMenuGuardia(countType);
                 }
                 break;
             case 2:

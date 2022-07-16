@@ -4,9 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "E:/OpenCV/opencv/build/include",
-                "E:/OpenCV/opencv/build/include",
-                "E:/OpenCV/opencv/build/include"
+                "C:\\Opencv\\opencv\\sources\\include\\opencv2"
             ],
             "defines": [
                 "_DEBUG",
