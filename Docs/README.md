@@ -72,6 +72,8 @@ Debido a la extension de la clase y de que todos los metodos de la misma son imp
 
 ## 3. Resultados obtenidos
 Los resultados que se obtuvieron luego de la implementacion de los metodos planteados fue la correcta detección y trackeo de entidades por medio de un registro de video (en este caso por medio de la webcam), mostrando tanto su id como su centroide en pantalla.
+Se logró la implementación de un algoritmo de detección y conteo de personas que pasan por una zona en especifico, también la implementación del sistema del flujo de personas que entran y salen.
+
 ## 4. Conclusiones
 Debido a diversos contratiempos sufridos durante la implementación de los algoritmos planteados y de la estructura que ibamos a seguir para el programa solo se logró la implementación exitosa de la parte de la identificacion y del trackeo de entidades (personas), ya que por diversos errores que ocurrian con lo siguiente a implementar se optó por dejar solo la parte funcional de lo conseguido para esta entrega del taller.
 Los demas objetivos correspondientes a esta entrega, como tambien los requeridos para la siguiente entrega, serán cumplidos en esta misma.
