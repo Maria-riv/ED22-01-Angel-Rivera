@@ -15,8 +15,8 @@ string CLASSES[] = {"background", "aeroplane", "bicycle", "bird", "boat",
 	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
 	"sofa", "train", "tvmonitor"};
 //añadir un vector
-int* watchVideo1(){
-    int vectorContador[2];
+pair<int,int> watchVideo1(){
+    pair<int,int> infoGente;
     auto centroidTracker = new CentroidTracker(20);
     LinkedList trackableObjects = LinkedList();
     VideoCapture cap("Docs/example_01.mp4");
@@ -108,15 +108,14 @@ int* watchVideo1(){
         if (c == 27)
             break;
     }
-    vectorContador[0] = totalUp;
-    vectorContador[1] = totalDown;
+    infoGente = make_pair(totalUp,totalDown);
     delete centroidTracker;
     destroyAllWindows();
-    return vectorContador;
+    return infoGente;
 }
 
-int* watchVideo2(){
-    int vectorContador[2];
+pair<int,int> watchVideo2(){
+    pair<int,int> infoGente;
     auto centroidTracker = new CentroidTracker(20);
     LinkedList trackableObjects = LinkedList();
     VideoCapture cap(0);
@@ -208,11 +207,10 @@ int* watchVideo2(){
         if (c == 27)
             break;
     }
-    vectorContador[0] = totalUp;
-    vectorContador[1] = totalDown;
+    infoGente = make_pair(totalUp,totalDown);
     delete centroidTracker;
     destroyAllWindows();
-    return vectorContador;
+    return infoGente;
 }
 bool validacion(string x){
     if(x == "SI"){
@@ -230,10 +228,10 @@ bool validacion(string x){
     return false;
 }
 void desplegarMenuGuardia(int op){
-    int* vec;
+    pair<int,int> vec;
     cout << "** MENU GUARDIA **" << endl;
     cout << "DETECTAR PERSONAS" << endl;
-    if(op == 1){
+    if(op == 0){
         vec = watchVideo1();
     }else
     {
@@ -241,17 +239,17 @@ void desplegarMenuGuardia(int op){
     }
     cout << "--CONTEO DE ENTRADA DE PERSONAS--" << endl;
     cout << "PERSONAS QUE ENTRAN: ";
-    cout << vec[0] << endl;
+    cout << vec.first << endl;
     cout << "--CONTEO DE SALIDA DE PERSONAS--" << endl;
     cout << "PERSONAS QUE SALEN: ";
-    cout << vec[1] << endl;
+    cout << vec.second << endl;
     cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE ENTRAN" << endl;
     cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE SALEN" << endl;
 }
 
 void iniciarSesion(){
     string opcion3;
-    int countType;
+    int countType = 0;
     cout << "Bienvenido al sistema de vigilancia de ACME\n" << "\nDesea inicar sesion?\n" << endl;
     cin >> opcion3;
     while (validacion(opcion3)) {
@@ -268,12 +266,12 @@ void iniciarSesion(){
                     cin >> eleccion;
                 }
                 if(eleccion == 1){
-                    countType = 1;
+                    countType = 0;
                     watchVideo1();
                     desplegarMenuGuardia(countType);
                 }
                 else{
-                    countType = 2;
+                    countType = 1;
                     watchVideo2();
                     desplegarMenuGuardia(countType);
                 }
@@ -285,7 +283,7 @@ void iniciarSesion(){
                 cin >> opcion4;               
                 if(validacion(opcion4)){
                     cout << "DESPLGANDO ESTADISTICAS..."<< endl;
-                    if(countType == 1){
+                    if(countType == 0){
                         watchVideo1();
                     }
                     else{
@@ -296,10 +294,6 @@ void iniciarSesion(){
         }
         cout << "¿Desea realizar otra accion?" << endl;
         cin >> opcion3;
-    }
-    if(!validacion(opcion3)){
-        cout << "REINTENTE. . . ";
-        iniciarSesion();
     }
     cout << "Cerrando sesion...";
 }
