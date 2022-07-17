@@ -14,3 +14,9 @@
 | 22/JUN | Corrección | Corrección de errores en el código | Sebastián Angel y Maria Rivera | 4 horas | 8 horas |
 | 23/JUN | Implementación | Implementación de contador de entidades | Sebastián Angel y Maria Rivera | 3 horas | 5 horas |
 | 24/JUN | Corrección | Corrección de errores de implementación | Sebastián Angel y Maria Rivera | 3 horas | 4 horas |
+| 27/JUN | Corrección | Corrección en la implementación de la detección de persona | Sebastián Angel | 2 horas | 4 horas |
+| 30/JUN | Implementación |Implementación de conteo de personas | Sebastián Angel y Maria Rivera | 5 horas | 7 horas |
+| 01/JUL | Investigación | Investigación sobre la implementación del arbol KDTree | Sebastián Angel y Maria Rivera | 4 horas | 4 horas |
+| 10/JUL | Implementación | Continuación de implemtación de conteo y flujo de personas | Sebastián Angel y Maria Rivera | 4 horas | 6 horas |
+| 12/JUL | Implementación | Implementación de menu | Sebastián Angel y Maria Rivera | 1 horas | 2 horas | 
+| 13/JUL | Depuración | Depurado del conteo de personas | Sebastián Angel y Maria Rivera | 3 horas | 4 horas | 
