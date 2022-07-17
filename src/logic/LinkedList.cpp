@@ -1,14 +1,14 @@
 #include "includes/LinkedList.h"
-
+// constructor de la linkedList 
 LinkedList::LinkedList(){
     head = nullptr;
     size = 0;
 };
-
+// verifica si la lista enlazada esta vacia
 bool LinkedList::isEmpty(){
     return head == nullptr;
 }
-
+// Metodo que añade a una persona
 void LinkedList::add(Persona p){
     Nodo* newNodo = new Nodo(p);
     if(this->isEmpty()){
@@ -22,7 +22,7 @@ void LinkedList::add(Persona p){
         current->setNext(newNodo);
     }
 }
-
+// Metodo que obtiene a una persona segun su identificador
 Persona LinkedList::get(int id){
     Nodo* current = head;
     Persona p = Persona();
@@ -33,7 +33,7 @@ Persona LinkedList::get(int id){
     }
     return p;
 }
-
+//Se busca una persona y se actualiza en el nodo correspondiente
 void LinkedList::actualizar(Persona p){
     Nodo* current = head;
     while(current->getNext()){

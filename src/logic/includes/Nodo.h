@@ -6,15 +6,15 @@
 #include "Persona.h"
 
 using namespace std;
-
+//Clase nodo que almacena una persona
 class Nodo{
     private:
-    Persona p;
-    Nodo* next;
+    Persona p;//objeto persona
+    Nodo* next; // nodo siguiente
 
     public:
-    Nodo();
-    Nodo(Persona);
+    Nodo();// contructor sin parametros
+    Nodo(Persona);  // constructor con persona de parametro
     void setNext(Nodo*);
     void setPersona(Persona);
     Persona getPersona();

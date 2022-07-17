@@ -14,44 +14,55 @@ string CLASSES[] = {"background", "aeroplane", "bicycle", "bird", "boat",
 	"bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
 	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
 	"sofa", "train", "tvmonitor"};
-//añadir un vector
+/*
+* Funcion que permite la detección y conteo de personas
+* Calcula el centroide 
+* Utiliza un video 
+* Retorna un vector con el contador de personas que entran (0)  y que salen (1)
+*/
 pair<int,int> watchVideo1(){
+    //vector que almacenara la informacion de entrada y salida
     pair<int,int> infoGente;
+    // Se inicializa una instancia de la clase centroidTracker
     auto centroidTracker = new CentroidTracker(20);
+    //Se crea la LinkedList
     LinkedList trackableObjects = LinkedList();
-    VideoCapture cap("Docs/example_01.mp4");
+    VideoCapture cap("C:/Users/maria/OneDrive/Escritorio/Proyecto estructura/src/example_01.mp4");
 
     string modelTxt = "E:/Repos VS Code/Centroid-Object-Tracking/model/deploy.prototxt";
     string modelBin = "E:/Repos VS Code/Centroid-Object-Tracking/model/res10_300x300_ssd_iter_140000.caffemodel";
 
     auto net = dnn::readNetFromCaffe(modelTxt, modelBin);
-
-    int totalUp = 0;
-    int totalDown = 0;
+    //Contadores de entrada y salida
+    int totalUp = 0; //personas que entran
+    int totalDown = 0; // personas que salen
 
     while (cap.isOpened()) {
+        // Declaracion del cameraFrame de la clase Mat
         Mat cameraFrame;
+        //Lectura de frames
         cap.read(cameraFrame); 
-
+        // Cambio de tamaño de una imagen
         resize(cameraFrame, cameraFrame, Size(400, 300));
-
+       
         vector<vector<int>> rects;
-        
+        //Deteccion a traves de una colección de imagenes que recopila
         auto inputBlob = dnn::blobFromImage(cameraFrame, 1.0, Size(400, 300), Scalar(104.0, 177.0, 123.0));
         net.setInput(inputBlob);
         auto detection = net.forward("detection_out");
         Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
 
-        float confidenceThreshold = 0.4;
+        float confidenceThreshold = 0.4;//Limite en la deteccion
         for (int i = 0; i < detectionMat.rows; i++) {
             float confidence = detectionMat.at<float>(i, 2);
 
             if (confidence > confidenceThreshold) {
+                //Limitantes en la imagen
                 int xLeftTop = static_cast<int>(detectionMat.at<float>(i, 3) * cameraFrame.cols);
                 int yLeftTop = static_cast<int>(detectionMat.at<float>(i, 4) * cameraFrame.rows);
                 int xRightBottom = static_cast<int>(detectionMat.at<float>(i, 5) * cameraFrame.cols);
                 int yRightBottom = static_cast<int>(detectionMat.at<float>(i, 6) * cameraFrame.rows);
-
+                // creacion del recuadro rojo
                 Rect object((int) xLeftTop, (int) yLeftTop, (int) (xRightBottom - xLeftTop),
                             (int) (yRightBottom - yLeftTop));
                 rectangle(cameraFrame, object, Scalar(0, 255, 0), 2);
@@ -66,7 +77,9 @@ pair<int,int> watchVideo1(){
 
         if (!objects.empty()) {
             for (auto obj: objects) {
+                //creacion del objeto persona
                 Persona p = trackableObjects.get(obj.first);
+                //creacion del ID para identificar a las personas
                 if(p.getId() == -1){
                     p = Persona(obj.second.first,obj.second.second,obj.first);
                 }
@@ -75,10 +88,12 @@ pair<int,int> watchVideo1(){
                     int direccion = obj.second.second - y;
 
                     if(p.getCounted() == false){
+                        // Se identifica si la persona sube y se le suma 1
                         if(direccion > 0 && obj.second.second < (300/2)){
                             totalUp++;
                             p.setCounted(true);
                         }
+                        //Se identifica si la persona baja y se le suma 1
                         else if (direccion < 0 && obj.second.second > (300/2))
                         {
                            totalDown++;
@@ -93,6 +108,7 @@ pair<int,int> watchVideo1(){
                             FONT_HERSHEY_COMPLEX, 0.5, Scalar(0, 255, 0), 2);
             }
         }
+        //Vector que almacena los contadores obtenidos 
         vector<pair<string,string>> info;
         info[0] = make_pair("Arriba: ",totalUp);
         info[1] = make_pair("Abajo: ",totalDown);
@@ -108,10 +124,10 @@ pair<int,int> watchVideo1(){
         if (c == 27)
             break;
     }
-    infoGente = make_pair(totalUp,totalDown);
-    delete centroidTracker;
-    destroyAllWindows();
-    return infoGente;
+    infoGente = make_pair(totalUp,totalDown);// Se guardan los contadores en el vector
+    delete centroidTracker; // se destruye la instancia de clase centroidTracker
+    destroyAllWindows(); // Destructor
+    return infoGente;// retorna el vector
 }
 
 pair<int,int> watchVideo2(){
@@ -212,6 +228,9 @@ pair<int,int> watchVideo2(){
     destroyAllWindows();
     return infoGente;
 }
+/*
+* Validacion de entrada de usuario
+*/
 bool validacion(string x){
     if(x == "SI"){
         return true;
@@ -227,9 +246,14 @@ bool validacion(string x){
     }
     return false;
 }
+//Calculo de la velocidad del flujo de entrada o salida
 int calculoVelocidad(int x){
     return x/60;
 }
+/*
+* Se despliega el menu del guardia
+* con la informacion correspondiente
+*/
 void desplegarMenuGuardia(int op){
     pair<int,int> vec;
     cout << "** MENU GUARDIA **" << endl;
@@ -251,7 +275,10 @@ void desplegarMenuGuardia(int op){
     cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE SALEN";
     cout << calculoVelocidad(vec.second) << endl;
 }
-
+/*
+*  Menu en donde se encuentra las opciones inicio de
+*  sesion del guardia y del admin
+*/
 void iniciarSesion(){
     string opcion3;
     int countType = 0;
@@ -282,17 +309,17 @@ void iniciarSesion(){
                 }
                 break;
             case 2:
-                //desplegarMenuGuardia();
+                
                 cout << "Bienvenido al menu GUARDIA" << endl << "¿Desea empezar con el conteo de personas? [si][no]\n";
                 string opcion4;
                 cin >> opcion4;               
                 if(validacion(opcion4)){
                     cout << "DESPLGANDO ESTADISTICAS..."<< endl;
                     if(countType == 0){
-                        watchVideo1();
+                        desplegarMenuGuardia(countType);
                     }
                     else{
-                        watchVideo2();
+                        desplegarMenuGuardia(countType);
                     }
                 }
                 break;
@@ -302,6 +329,7 @@ void iniciarSesion(){
     }
     cout << "Cerrando sesion...";
 }
+// Main en donde se ejecuta la funcion iniciar sesion
 int main() {
     iniciarSesion();
     return 0;

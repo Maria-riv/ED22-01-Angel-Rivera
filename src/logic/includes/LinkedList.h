@@ -4,18 +4,19 @@
 #include <iostream>
 #include "Nodo.h"
 
-
+// Clase de la lista enlazada 
 class LinkedList{
+    // metodos de la lista enlazada
     private:
-    Nodo* head;
-    int size;
+    Nodo* head; // nodo cabezal
+    int size; // total de nodos de la lista
 
     public:
-    LinkedList();
-    void add(Persona p);
-    Persona get(int id);
-    bool isEmpty();
-    void actualizar(Persona p);
+    LinkedList(); // constructor
+    void add(Persona p); // añadir persona
+    Persona get(int id); // obtener una persona en relacion a su id
+    bool isEmpty(); // verificar si la lista esta vacia
+    void actualizar(Persona p);// actualizar la persona segun el nodo en donde se encuentre
 
 };
 

@@ -1,5 +1,5 @@
 #include "includes/Persona.h"
-
+//constructor de persona
 Persona::Persona(int xC, int yC, int idObj){
     this->centroids.push_back(make_pair(xC,yC));
     this->counted = false;
@@ -34,7 +34,7 @@ vector<pair<int,int>> Persona::getCentroids(){
 void Persona::addCentroids(pair<int,int> actCentroids){
     centroids.push_back(actCentroids);
 }
-
+//  Promedio de variacion del eje y en los centroides
 int Persona::promedioYC(){
     int prom = 0;
     for(auto c: centroids){
