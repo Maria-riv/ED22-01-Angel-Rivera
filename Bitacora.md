@@ -20,3 +20,4 @@
 | 10/JUL | Implementación | Continuación de implemtación de conteo y flujo de personas | Sebastián Angel y Maria Rivera | 4 horas | 6 horas |
 | 12/JUL | Implementación | Implementación de menu | Sebastián Angel y Maria Rivera | 1 horas | 2 horas | 
 | 13/JUL | Depuración | Depurado del conteo de personas | Sebastián Angel y Maria Rivera | 3 horas | 4 horas | 
+| 16/JUL | Depuración | Depuración del código en general y arreglo de errores | Maria Rivera | 4 horas | 9 horas |  
