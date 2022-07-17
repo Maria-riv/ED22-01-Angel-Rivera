@@ -227,6 +227,9 @@ bool validacion(string x){
     }
     return false;
 }
+int calculoVelocidad(int x){
+    return x/60;
+}
 void desplegarMenuGuardia(int op){
     pair<int,int> vec;
     cout << "** MENU GUARDIA **" << endl;
@@ -243,8 +246,10 @@ void desplegarMenuGuardia(int op){
     cout << "--CONTEO DE SALIDA DE PERSONAS--" << endl;
     cout << "PERSONAS QUE SALEN: ";
     cout << vec.second << endl;
-    cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE ENTRAN" << endl;
-    cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE SALEN" << endl;
+    cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE ENTRAN";
+    cout << calculoVelocidad(vec.first) << endl;
+    cout << "VELOCIDAD DE FLUJO DE PERSONAS QUE SALEN";
+    cout << calculoVelocidad(vec.second) << endl;
 }
 
 void iniciarSesion(){
