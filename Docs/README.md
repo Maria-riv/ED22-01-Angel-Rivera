@@ -77,6 +77,8 @@ Se logró la implementación de un algoritmo de detección y conteo de personas 
 ## 4. Conclusiones
 Debido a diversos contratiempos sufridos durante la implementación de los algoritmos planteados y de la estructura que ibamos a seguir para el programa solo se logró la implementación exitosa de la parte de la identificacion y del trackeo de entidades (personas), ya que por diversos errores que ocurrian con lo siguiente a implementar se optó por dejar solo la parte funcional de lo conseguido para esta entrega del taller.
 Los demas objetivos correspondientes a esta entrega, como tambien los requeridos para la siguiente entrega, serán cumplidos en esta misma.
+# Video explicativo
+* [LINK](https://drive.google.com/drive/folders/1-thzwHKsdZ_BhRwRb_jibc1GazWKDPIF?usp=sharing) VIDEO
 # Anexos
 
 ## Anexo A: Instalación librerías OpenCV
