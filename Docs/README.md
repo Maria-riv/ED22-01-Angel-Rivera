@@ -23,6 +23,7 @@ Para la construcción de este, es necesario la instalación y configuración de 
 
 Detectar personas en la entrada de un edificio, identificar cada entidad para recopilar informaciones varias para lograr un conteo de las personas que salen y entran, esto debido a que la empresa necesita el balance del flujo de personas en el edificio, también se incluye la velocidad del flujo de entrada y salida.
 
+
 ### 1.2 Objetivos 
 
 **Objetivo General**
@@ -41,7 +42,7 @@ Desarrollar un sistema que detecte personas, pueda almacenar entidades, contabil
 
 ### 1.3 Solución propuesta
 
-Implementar un sistema con diversos algoritmos que contribuyan a la solucion del problema, es decir que pueda detectar y contabilizar las personas que entran y salen del edificio.
+Implementar un sistema que trabaje a base de un algoritmo que detecta a base de centroides, en donde a partir de esta manera se detectan las personas y se diferencian entre si, a través de un identificador, de esta manera se puede contabilizar quienes entran y salen. A través de esto se puede generar estadisticas mediante los resultados obtenidos. 
 
 ## 2. Materiales y métodos
 
@@ -56,9 +57,9 @@ La librería utilizadas para la construcción del proyecto es la de OpeCV en don
 
 Las clases implementadas permiten el cumplimiento de los objetivos propuestos, principalmente para la detección y conteo de las personas.
 * La clase **Persona** almacena los datos de las entidades detectadas en las secuencias de video.
-*  La clase **Nodo** permite almacenar el objeto Persona, en donde  el conjunto de estos nodos se almacenarán en otra clase llamada **LinkedList**.
-*  La clase **LinkedList** permite guardar los datos de las entidades las cuales se almacenan en los nodos, esta lista nos permite llevar el conteo de las personas que entran y salen del edificio.
-*  La clase **CentroidTracker** permite rastear las entidades detectadas, permitiendo identificar si la persona entra o sale.
+* La clase **Nodo** permite almacenar el objeto Persona, en donde  el conjunto de estos nodos se almacenarán en otra clase llamada **LinkedList**.
+* La clase **LinkedList** permite guardar los datos de las entidades las cuales se almacenan en los nodos, esta lista nos permite llevar el conteo de las personas que entran y salen del edificio.
+* La clase **CentroidTracker** permite rastear las entidades detectadas, permitiendo identificar si la persona entra o sale.
 * La clase **main** se encuentra implemenada con algoritmos que permiten la detección de las personas y la ejecucción del programa.
 
 ### 2.3 Implementación
@@ -71,12 +72,15 @@ Este algoritmo se basa en ir comparando frame por frame los centroides de las en
 Debido a la extension de la clase y de que todos los metodos de la misma son importantes para su correcta ejecucion se sugiere revisar su funcionamiento directamente desde los archivos del repositorio.
 
 ## 3. Resultados obtenidos
+
 Los resultados que se obtuvieron luego de la implementacion de los metodos planteados fue la correcta detección y trackeo de entidades por medio de un registro de video (en este caso por medio de la webcam), mostrando tanto su id como su centroide en pantalla.
 Se logró la implementación de un algoritmo de detección y conteo de personas que pasan por una zona en especifico, también la implementación del sistema del flujo de personas que entran y salen.
+Se logró la implementación de un algoritmo que pueda dar las estadísticas del flujo del entrada y salida.
+Se logró la implementación un algoritmo que muestre los requerrimientos a través de menú.
 
 ## 4. Conclusiones
-Debido a diversos contratiempos sufridos durante la implementación de los algoritmos planteados y de la estructura que ibamos a seguir para el programa solo se logró la implementación exitosa de la parte de la identificacion y del trackeo de entidades (personas), ya que por diversos errores que ocurrian con lo siguiente a implementar se optó por dejar solo la parte funcional de lo conseguido para esta entrega del taller.
-Los demas objetivos correspondientes a esta entrega, como tambien los requeridos para la siguiente entrega, serán cumplidos en esta misma.
+Para esta entrega logramos implementar los algoritmos de forma exitosa los requerrimientos pero debido a los contratiempos provocados por el clima y las intensas lluvias que impidieron la comunicación entre el grupo y también el avance del código, también la aparición de diversos errores en relación a la librería y eso nos generó mucha pérdida de tiempo para arreglar lo que teniamos implementado. Se intento implementar el árbol KDTree, pero por estas mismas problemáticas se imposibilitó la implementación pero rescatamos que encontramos la logica y la gran utilidad que pudo tener al ser implementado ya que facilitaba los cálculos de los centroides como lo tenemos implementado.
+
 # Video explicativo
 * [LINK](https://drive.google.com/drive/folders/1-thzwHKsdZ_BhRwRb_jibc1GazWKDPIF?usp=sharing) VIDEO
 # Anexos
