@@ -129,11 +129,21 @@ pair<int,int> watchVideo1(){
     destroyAllWindows(); // Destructor
     return infoGente;// retorna el vector
 }
-
+/*
+* Funcion que permite la detección y conteo de personas
+* Calcula el centroide 
+* Utiliza la camara 
+* Retorna un vector con el contador de personas que entran (0)  y que salen (1)
+* La logica es la misma que la funcion anterior
+*/
 pair<int,int> watchVideo2(){
+    // Declaracion del cameraFrame de la clase Mat
     pair<int,int> infoGente;
+    // Se inicializa una instancia de la clase centroidTracker
     auto centroidTracker = new CentroidTracker(20);
+    //Se crea la LinkedList
     LinkedList trackableObjects = LinkedList();
+    // ejecuta la camara
     VideoCapture cap(0);
 
     string modelTxt = "E:/Repos VS Code/Centroid-Object-Tracking/model/deploy.prototxt";
@@ -223,10 +233,10 @@ pair<int,int> watchVideo2(){
         if (c == 27)
             break;
     }
-    infoGente = make_pair(totalUp,totalDown);
-    delete centroidTracker;
-    destroyAllWindows();
-    return infoGente;
+    infoGente = make_pair(totalUp,totalDown);// Se guardan los contadores en el vector
+    delete centroidTracker; // se destruye la instancia de clase centroidTracker
+    destroyAllWindows(); // Destructor
+    return infoGente;// retorna el vector
 }
 /*
 * Validacion de entrada de usuario
@@ -289,30 +299,36 @@ void iniciarSesion(){
         cout << "Como desea iniciar sesion?\n" << "\n(1) Iniciar como ADMINISTRADOR\n" << "(2) Iniciar como GUARDIA" << "\n(3) Cerrar Sesion\n" << endl;
         cin >> opcion;
         switch(opcion){
+            //MENU ADMIN
             case 1:
                 cout << "Bienvenido al menu ADMIN" << endl << "Seleccione como se va a trabajar con el conteo de personas: \n(1) Conteo con un video \n(2) Conteo con la camara";
                 int eleccion;
                 cin >> eleccion;
+                cout << "Seleccione como se va a trabajar con el conteo de personas: \n(1) Conteo con un video \n(2) Conteo con la camara \n";
+                cin >> countType;
                 while(eleccion != 1 || eleccion !=2){
                     cout << "Operacion no valida, intente de nuevo" << endl;
                     cin >> eleccion;
                 }
+                //con video
                 if(eleccion == 1){
                     countType = 0;
                     watchVideo1();
-                    desplegarMenuGuardia(countType);
                 }
+                // con camara
                 else{
                     countType = 1;
                     watchVideo2();
-                    desplegarMenuGuardia(countType);
                 }
                 break;
             case 2:
-                
+                // MENU GUARDIA
+
                 cout << "Bienvenido al menu GUARDIA" << endl << "¿Desea empezar con el conteo de personas? [si][no]\n";
                 string opcion4;
-                cin >> opcion4;               
+                cin >> opcion4;      
+                cout << "Seleccione como se va a trabajar: \n(1) Con un video \n(2) Con la camara \n";
+                cin >> countType;
                 if(validacion(opcion4)){
                     cout << "DESPLGANDO ESTADISTICAS..."<< endl;
                     if(countType == 0){
